@@ -1,5 +1,6 @@
 package com.example.guest.alphabetty;
 
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.GridView;
@@ -16,8 +17,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         gridView = (GridView) findViewById(R.id.baseGridView);
-        gridView.setAdapter(new AlphabetAdapter(this, letters));
+        Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/insanibc.ttf");
+        gridView.setAdapter(new AlphabetAdapter(this, letters, typeface));
 
     }
 }
